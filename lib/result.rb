@@ -1,5 +1,6 @@
 class Result
   @@result_data = []
+
   attr_reader :team_id, :hoa, :result
   def initialize(result_data)
     @game_id = result_data[:game_id] 
@@ -21,6 +22,10 @@ class Result
 
   def self.result_data(data)
     @@result_data = data
+  end
+
+  def result_data
+    @@result_data
   end
 
   def self.parse_csv_data(file_path)
